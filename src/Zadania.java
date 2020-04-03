@@ -21,7 +21,7 @@ public class Zadania {
 
             System.out.println();
         }
-
+        System.out.printf("\n\n");
         System.out.println("ZADANIE NR 2.");
         Scanner scan = new Scanner(System.in);
         System.out.println("Wyraz: ");
@@ -29,8 +29,33 @@ public class Zadania {
         System.out.println("Kwestia: ");
         String kwestia = scan.nextLine();
 
+        wyraz = wyraz.toLowerCase();
+        kwestia = kwestia.toLowerCase();
 
+        int i = 0;
+        int prawda = 0;
+        while(i < kwestia.length()){
+            int j = 0;
+            int z = 0;
+            while(j < wyraz.length()){
 
+                if (kwestia.charAt(i) == wyraz.charAt(z)){
+                    prawda++;
+                    z++;
+                    i++;
+                }
+
+                j++;
+            }
+            if (prawda == wyraz.length()){
+                System.out.println("true");
+                break;
+            }
+            i++;
+        }
+        if (prawda != wyraz.length()){
+            System.out.println("false");
+        }
     }
 
 }
